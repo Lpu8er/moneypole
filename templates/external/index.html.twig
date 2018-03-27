@@ -7,19 +7,20 @@
                   style="margin: auto;">
                 <div class="input-group mb-3 mr-sm-3">
                     <label class="sr-only"
-                           for="loginEmail">Email Address</label>
-                    <input type="email"
+                           for="loginUsername">Username</label>
+                    <input type="text"
                            class="form-control"
-                           id="loginEmail"
-                           name="email"
-                           placeholder="Email" />
+                           id="loginUsername"
+                           name="_username"
+                           placeholder="Username" />
                     <label class="sr-only"
                            for="loginPwd">Password</label>
                     <input type="password"
                            class="form-control"
                            id="loginPwd"
-                           name="pwd"
+                           name="_password"
                            placeholder="Password" />
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
                     <button type="submit"
                             class="btn btn-primary">Login</button>
                 </div>

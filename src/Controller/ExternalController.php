@@ -4,6 +4,10 @@ namespace App\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
+use Symfony\Component\HttpFoundation\Request;
+
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+
 /**
  * Description of ExternalController
  *
@@ -16,15 +20,19 @@ class ExternalController extends AbstractController {
      */
     public function index() {
         $this->addMessage('Hello World', static::MSGLVL_ERROR, false);
-        return [];
+        return $this->wrap();
     }
     
     /**
      * @Route("/login", name="login")
      * @Template()
      */
-    public function login() {
-        return [];
+    public function login(Request $request, AuthenticationUtils $authenticationUtils) {
+        $error = $authenticationUtils->getLastAuthenticationError();
+        if(!empty($error)) {
+            $this->addMessage('Authentication error', static::MSGLVL_ERROR);
+        }
+        return $this->wrap();
     }
     
     /**
@@ -32,7 +40,7 @@ class ExternalController extends AbstractController {
      * @Template()
      */
     public function subscribe() {
-        return [];
+        return $this->wrap();
     }
     
     /**
