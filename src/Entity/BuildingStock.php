@@ -10,11 +10,20 @@ use Doctrine\ORM\Mapping as ORM;
 class BuildingStock
 {
     /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     *
+     * @var type 
+     * @ORM\Id
+     * @ORM\ManyToOne(targetEntity="Building")
+     * @ORM\JoinColumn(name="building_id", referencedColumnName="id")
      */
-    private $id;
-
-    // add your own fields
+    protected $building;
+    /**
+     *
+     * @var type 
+     * @ORM\Id
+     * @ORM\ManyToOne(targetEntity="Item")
+     * @ORM\JoinColumn(name="item_id", referencedColumnName="id")
+     */
+    protected $item;
+    protected $nb = 0;
 }

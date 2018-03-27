@@ -1,0 +1,14 @@
+{% for level in ['error', 'warning', 'notice', 'success'] %}
+    {% for message in app.flashes(level) %}
+        <div class="flash-{{ level }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
+{% if _messages is defined %}
+    {% for message in _messages %}
+        <div class="flash-{{ message.lvl }}">
+            {{ message.str }}
+        </div>
+    {% endfor %}
+{% endif %}

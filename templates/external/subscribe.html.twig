@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <form method="post" action="{{ path('subscribe') }}">
+            <div class="form-group">
+                <label for="subscribeEmail">Email Address</label>
+                <input type="email"
+                       class="form-control"
+                       id="subscribeEmail"
+                       name="email"
+                       placeholder="Your subscription email" />
+            </div>
+            <div class="form-group">
+                <label for="subscribeUsername">Username</label>
+                <input type="text"
+                       class="form-control"
+                       id="subscribeUsername"
+                       name="username"
+                       pattern="[a-zA-Z0-9_-]"
+                       placeholder="An username" />
+                <small id="pwdHelp"
+                       class="form-text text-muted">
+                    Usernames are used internally and to double-check your identity.
+                    They're not public.
+                </small>
+            </div>
+            <div class="form-group">
+                <label for="subscribePwd">Password</label>
+                <input type="password"
+                       class="form-control"
+                       id="subscribePwd"
+                       name="pwd"
+                       placeholder="Your password" />
+                <small id="pwdHelp"
+                       class="form-text text-muted">
+                    We will NEVER ask your password.
+                </small>
+            </div>
+            <div class="form-group">
+                <label for="subscribeDisplayname">Public name</label>
+                <input type="text"
+                       class="form-control"
+                       id="subscribeDisplayname"
+                       name="displayname"
+                       placeholder="Name as displayed" />
+                <small id="pwdHelp"
+                       class="form-text text-muted">
+                    That name is your public one.
+                    Everybody will know you by that name.
+                    Choose wisely !
+                </small>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+    </div>
+{% endblock %}

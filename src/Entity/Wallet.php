@@ -13,10 +13,10 @@ class Wallet extends AbstractEntity
      *
      * @var type 
      * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="Entity")
-     * @ORM\JoinColumn(name="entity_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="NamedEntity")
+     * @ORM\JoinColumn(name="namedentity_id", referencedColumnName="id")
      */
-    protected $entity;
+    protected $namedEntity;
     /**
      *
      * @var type 
