@@ -119,4 +119,10 @@ class Building extends IdEntity {
      * @var \DateTime
      */
     protected $startBuild = null;
+    /**
+     * Energetic consumption by day
+     * @ORM\Column(name="energy", type="integer")
+     * @var int
+     */
+    protected $energy = 0;
 }

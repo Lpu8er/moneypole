@@ -25,5 +25,10 @@ class Ingredient
      * @ORM\JoinColumn(name="item_id", referencedColumnName="id")
      */
     protected $item;
+    /**
+     *
+     * @ORM\Column(name="nb", type="integer")
+     * @var int 
+     */
     protected $nb;
 }

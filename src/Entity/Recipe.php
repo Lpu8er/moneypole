@@ -9,5 +9,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Recipe extends IdEntity
 {
-    
+    protected $name;
+    protected $resultProduct;
+    protected $points;
+    protected $pollution;
+    protected $energy;
 }

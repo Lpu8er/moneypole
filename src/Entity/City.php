@@ -113,4 +113,11 @@ class City extends NamedEntity
      * @var float
      */
     protected $livingTax;
+    
+    /**
+     * Cout individuel energetique
+     * @ORM\Column(name="energy_cost", type="float")
+     * @var float
+     */
+    protected $energyCost;
 }

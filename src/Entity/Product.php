@@ -9,5 +9,5 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Product extends Item
 {
-    
+    protected $name;
 }
