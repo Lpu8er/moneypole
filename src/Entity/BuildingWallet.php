@@ -25,5 +25,10 @@ class BuildingWallet extends AbstractEntity
      * @ORM\JoinColumn(name="currency_id", referencedColumnName="id")
      */
     protected $currency;
+    /**
+     *
+     * @ORM\Column(name="amount", type="decimal")
+     * @var float
+     */
     protected $amount;
 }

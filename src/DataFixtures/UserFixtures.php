@@ -10,22 +10,23 @@ use Doctrine\Common\Persistence\ObjectManager;
  *
  * @author captivea-qch
  */
-class UserFixtures extends Fixture {
+class UserFixtures extends Fixture implements ContainerAwareInterface {
+    protected $container;
+    
     public function load(ObjectManager $manager) {
         $toInsert = [
             'root' => [
                 'email' => 'lpu8er@gmail.com',
                 'pwd' => 'test',
                 'displayName' => 'ROOT',
-                'roles' => [
-                    User::ROLE_ADMIN,
-                ],
+                'admin' => true,
+                'bot' => false,
             ],
             /*'gaia' => [],*/
         ];
         foreach($toInsert as $ik => $ti) {
-            $ti['roles'][] = User::ROLE_BOT;
             $u = User::factory($ti);
+            $u->setUsername($ik);
             $manager->persist($u);
             $manager->flush();
             $this->setReference('user-'.$ik, $u);

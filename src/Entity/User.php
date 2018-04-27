@@ -65,7 +65,7 @@ class User extends IdEntity implements UserInterface, \Serializable {
         if($this->admin) {
             $r[] = static::ROLE_ADMIN;
         }
-        if($this->admin) {
+        if($this->bot) {
             $r[] = static::ROLE_BOT;
         }
         return $r;
