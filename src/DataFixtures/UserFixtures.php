@@ -31,8 +31,14 @@ class UserFixtures extends Fixture implements ContainerAwareInterface {
             /*'gaia' => [],*/
         ];
         foreach($toInsert as $ik => $ti) {
-            $u = User::factory($ti);
+            $encoder = $this->container->get('security.password_encoder');
+            $u = new User;
+            $u->setEmail($ti['email']);
+            $u->setDisplayName($ti['displayName']);
             $u->setUsername($ik);
+            $u->setPwd($encoder->encodePassword($u, $ti['pwd']));
+            $u->setAdmin(!empty($ti['admin']));
+            $u->setBot(!empty($ti['bot']));
             $manager->persist($u);
             $manager->flush();
             $this->setReference('user-'.$ik, $u);
