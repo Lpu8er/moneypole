@@ -11,14 +11,14 @@ class Country extends NamedEntity
 {
     /**
      * Taxe de sol par m2 par ville
-     * @ORM\Column(name="ground_tax", type="float")
+     * @ORM\Column(name="ground_tax", type="decimal")
      * @var float
      */
     protected $groundTax;
     
     /**
      * Taxe de vie par employé par ville
-     * @ORM\Column(name="living_tax", type="float")
+     * @ORM\Column(name="living_tax", type="decimal")
      * @var float
      */
     protected $livingTax;

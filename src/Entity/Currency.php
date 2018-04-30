@@ -18,14 +18,14 @@ class Currency extends IdEntity
 
     /**
      *
-     * @ORM\Column(name="name", type="string")
+     * @ORM\Column(name="symbol", type="string")
      * @var string
      */
     protected $symbol;
     
     /**
      *
-     * @ORM\Column(name="convert_rate", type="float")
+     * @ORM\Column(name="convert_rate", type="decimal")
      * @var string
      */
     protected $convertRate;

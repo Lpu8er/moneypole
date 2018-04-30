@@ -25,5 +25,11 @@ class Wallet extends AbstractEntity
      * @ORM\JoinColumn(name="currency_id", referencedColumnName="id")
      */
     protected $currency;
-    protected $amount;
+    
+    /**
+     *
+     * @ORM\Column(name="amount", type="decimal")
+     * @var float
+     */
+    protected $amount = 0.00;
 }

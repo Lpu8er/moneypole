@@ -13,10 +13,10 @@ class Market extends AbstractEntity
      *
      * @var type 
      * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="Building")
-     * @ORM\JoinColumn(name="building_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Shop")
+     * @ORM\JoinColumn(name="shop_id", referencedColumnName="id")
      */
-    protected $building;
+    protected $shop;
     /**
      *
      * @var type 
@@ -25,6 +25,16 @@ class Market extends AbstractEntity
      * @ORM\JoinColumn(name="item_id", referencedColumnName="id")
      */
     protected $item;
+    /**
+     *
+     * @ORM\Column(name="nb", type="integer")
+     * @var int
+     */
     protected $nb = 0;
+    /**
+     *
+     * @ORM\Column(name="unit_price", type="decimal")
+     * @var float
+     */
     protected $unitPrice = 0.;
 }

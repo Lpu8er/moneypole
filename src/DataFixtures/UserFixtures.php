@@ -4,6 +4,8 @@ namespace App\DataFixtures;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Description of UserFixtures
@@ -12,6 +14,10 @@ use Doctrine\Common\Persistence\ObjectManager;
  */
 class UserFixtures extends Fixture implements ContainerAwareInterface {
     protected $container;
+    
+    public function setContainer(ContainerInterface $container = null) {
+        $this->container = $container;
+    }
     
     public function load(ObjectManager $manager) {
         $toInsert = [

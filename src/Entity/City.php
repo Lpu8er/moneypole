@@ -32,91 +32,91 @@ class City extends NamedEntity
     
     /**
      *
-     * @ORM\Column(name="fire_security", type="float")
+     * @ORM\Column(name="fire_security", type="decimal")
      * @var float
      */
     protected $fireSecurity;
     
     /**
      *
-     * @ORM\Column(name="insecurity", type="float")
+     * @ORM\Column(name="insecurity", type="decimal")
      * @var float
      */
     protected $insecurity;
     
     /**
      *
-     * @ORM\Column(name="health", type="float")
+     * @ORM\Column(name="health", type="decimal")
      * @var float
      */
     protected $health;
     
     /**
      *
-     * @ORM\Column(name="pollution", type="float")
+     * @ORM\Column(name="pollution", type="decimal")
      * @var float
      */
     protected $pollution;
     
     /**
      *
-     * @ORM\Column(name="fire_budget", type="float")
+     * @ORM\Column(name="fire_budget", type="decimal")
      * @var float
      */
     protected $fireBudget;
     
     /**
      *
-     * @ORM\Column(name="security_budget", type="float")
+     * @ORM\Column(name="security_budget", type="decimal")
      * @var float
      */
     protected $securityBudget;
     
     /**
      *
-     * @ORM\Column(name="health_budget", type="float")
+     * @ORM\Column(name="health_budget", type="decimal")
      * @var float
      */
     protected $healthBudget;
     
     /**
      *
-     * @ORM\Column(name="green_budget", type="float")
+     * @ORM\Column(name="green_budget", type="decimal")
      * @var float
      */
     protected $greenBudget;
     
     /**
      *
-     * @ORM\Column(name="build_budget", type="float")
+     * @ORM\Column(name="build_budget", type="decimal")
      * @var float
      */
     protected $buildBudget;
     
     /**
      * Taxe de sol, déduite chaque semaine par batiment par m2
-     * @ORM\Column(name="ground_tax", type="float")
+     * @ORM\Column(name="ground_tax", type="decimal")
      * @var float
      */
     protected $groundTax;
     
     /**
      * Taxe de construction, déduite chaque construction par m2
-     * @ORM\Column(name="build_tax", type="float")
+     * @ORM\Column(name="build_tax", type="decimal")
      * @var float
      */
     protected $buildTax;
     
     /**
      * Taxe de vie, déduite partiellement par employe
-     * @ORM\Column(name="living_tax", type="float")
+     * @ORM\Column(name="living_tax", type="decimal")
      * @var float
      */
     protected $livingTax;
     
     /**
      * Cout individuel energetique
-     * @ORM\Column(name="energy_cost", type="float")
+     * @ORM\Column(name="energy_cost", type="decimal")
      * @var float
      */
     protected $energyCost;
