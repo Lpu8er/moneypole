@@ -28,7 +28,7 @@ class Wallet extends AbstractEntity
     
     /**
      *
-     * @ORM\Column(name="amount", type="decimal")
+     * @ORM\Column(name="amount", type="decimal", precision=12, scale=5)
      * @var float
      */
     protected $amount = 0.00;

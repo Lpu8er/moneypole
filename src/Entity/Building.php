@@ -37,49 +37,49 @@ class Building extends IdEntity {
     protected $currentSize;
     /**
      *
-     * @ORM\Column(name="base_fire_hazard", type="decimal")
+     * @ORM\Column(name="base_fire_hazard", type="decimal", precision=12, scale=5)
      * @var float
      */
     protected $baseFireHazard;
     /**
      *
-     * @ORM\Column(name="current_fire_hazard", type="decimal")
+     * @ORM\Column(name="current_fire_hazard", type="decimal", precision=12, scale=5)
      * @var float
      */
     protected $currentFireHazard;
     /**
      *
-     * @ORM\Column(name="base_security", type="decimal")
+     * @ORM\Column(name="base_security", type="decimal", precision=12, scale=5)
      * @var float
      */
     protected $baseSecurity;
     /**
      *
-     * @ORM\Column(name="current_security", type="decimal")
+     * @ORM\Column(name="current_security", type="decimal", precision=12, scale=5)
      * @var float
      */
     protected $currentSecurity;
     /**
      *
-     * @ORM\Column(name="base_safety", type="decimal")
+     * @ORM\Column(name="base_safety", type="decimal", precision=12, scale=5)
      * @var float
      */
     protected $baseSafety;
     /**
      *
-     * @ORM\Column(name="current_safety", type="decimal")
+     * @ORM\Column(name="current_safety", type="decimal", precision=12, scale=5)
      * @var float
      */
     protected $currentSafety;
     /**
      *
-     * @ORM\Column(name="base_pollution", type="decimal")
+     * @ORM\Column(name="base_pollution", type="decimal", precision=12, scale=5)
      * @var float
      */
     protected $basePollution;
     /**
      *
-     * @ORM\Column(name="current_pollution", type="decimal")
+     * @ORM\Column(name="current_pollution", type="decimal", precision=12, scale=5)
      * @var float
      */
     protected $currentPollution;

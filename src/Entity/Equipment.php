@@ -35,7 +35,7 @@ class Equipment extends IdEntity
     protected $buildPoints;
     /**
      * 
-     * @ORM\Column(name="build_cost", type="decimal")
+     * @ORM\Column(name="build_cost", type="decimal", precision=12, scale=5)
      * @var float
      */
     protected $buildCost;
@@ -53,31 +53,31 @@ class Equipment extends IdEntity
     protected $storage;
     /**
      * 
-     * @ORM\Column(name="happiness", type="decimal")
+     * @ORM\Column(name="happiness", type="decimal", precision=12, scale=5)
      * @var float
      */
     protected $happiness;
     /**
      * 
-     * @ORM\Column(name="pollution", type="decimal")
+     * @ORM\Column(name="pollution", type="decimal", precision=12, scale=5)
      * @var float
      */
     protected $pollution;
     /**
      * 
-     * @ORM\Column(name="fire_hazard", type="decimal")
+     * @ORM\Column(name="fire_hazard", type="decimal", precision=12, scale=5)
      * @var float
      */
     protected $fireHazard;
     /**
      * 
-     * @ORM\Column(name="security", type="decimal")
+     * @ORM\Column(name="security", type="decimal", precision=12, scale=5)
      * @var float
      */
     protected $security;
     /**
      * 
-     * @ORM\Column(name="safety", type="decimal")
+     * @ORM\Column(name="safety", type="decimal", precision=12, scale=5)
      * @var float
      */
     protected $safety;
@@ -89,7 +89,7 @@ class Equipment extends IdEntity
     protected $energy;
     /**
      * 
-     * @ORM\Column(name="health", type="decimal")
+     * @ORM\Column(name="health", type="decimal", precision=12, scale=5)
      * @var float
      */
     protected $health;

@@ -32,21 +32,21 @@ class Company extends NamedEntity
     
     /**
      * Participation aux taxes : cette valeur sert d'étalon vs min/max wages
-     * @ORM\Column(name="living_participation", type="decimal")
+     * @ORM\Column(name="living_participation", type="decimal", precision=12, scale=5)
      * @var float 
      */
     protected $livingParticipation;
     
     /**
      * 
-     * @ORM\Column(name="min_wage", type="decimal")
+     * @ORM\Column(name="min_wage", type="decimal", precision=12, scale=5)
      * @var float 
      */
     protected $minWage;
     
     /**
      * 
-     * @ORM\Column(name="max_wage", type="decimal")
+     * @ORM\Column(name="max_wage", type="decimal", precision=12, scale=5)
      * @var float 
      */
     protected $maxWage;
@@ -60,7 +60,7 @@ class Company extends NamedEntity
     
     /**
      * Salaire patronal. Ce salaire est évalué uniquement lors de la compta, et est alors aussi utilisé pour la reputation entreprise
-     * @ORM\Column(name="boss_wage", type="decimal")
+     * @ORM\Column(name="boss_wage", type="decimal", precision=12, scale=5)
      * @var float 
      */
     protected $bossWage;

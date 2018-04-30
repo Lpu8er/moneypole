@@ -33,7 +33,7 @@ class Market extends AbstractEntity
     protected $nb = 0;
     /**
      *
-     * @ORM\Column(name="unit_price", type="decimal")
+     * @ORM\Column(name="unit_price", type="decimal", precision=12, scale=5)
      * @var float
      */
     protected $unitPrice = 0.;

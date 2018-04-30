@@ -25,7 +25,7 @@ class Currency extends IdEntity
     
     /**
      *
-     * @ORM\Column(name="convert_rate", type="decimal")
+     * @ORM\Column(name="convert_rate", type="decimal", precision=12, scale=5)
      * @var string
      */
     protected $convertRate;

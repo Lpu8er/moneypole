@@ -31,7 +31,7 @@ class Recipe extends IdEntity
     /**
      *
      * @var float 
-     * @ORM\Column(name="pollution", type="decimal")
+     * @ORM\Column(name="pollution", type="decimal", precision=12, scale=5)
      */
     protected $pollution;
     /**

@@ -52,6 +52,33 @@ class CityFixtures extends Fixture implements ContainerAwareInterface, Dependent
                 'ltax' => 0.,
                 'energy' => 0.,
             ],
+            'paris' => [
+                'name' => 'Paris',
+                'country' => 'france',
+                'z' => 'capital',
+                'gtax' => 0.,
+                'btax' => 0.,
+                'ltax' => 0.,
+                'energy' => 0.,
+            ],
+            'tokyo' => [
+                'name' => 'Tokyo',
+                'country' => 'japan',
+                'z' => 'capital',
+                'gtax' => 0.,
+                'btax' => 0.,
+                'ltax' => 0.,
+                'energy' => 0.,
+            ],
+            'grenoble' => [
+                'name' => 'Grenoble',
+                'country' => 'france',
+                'z' => 'xlarge',
+                'gtax' => 0.,
+                'btax' => 0.,
+                'ltax' => 0.,
+                'energy' => 0.,
+            ],
         ];
         foreach($toInsert as $ik => $ti) {
             $z = static::getSizes()[$ti['z']];
@@ -67,6 +94,12 @@ class CityFixtures extends Fixture implements ContainerAwareInterface, Dependent
             $manager->persist($c);
             $manager->flush();
             $this->setReference('city-'.$ik, $c);
+            if('capital' === $ti['z']) {
+                $capitalOf = $this->getReference('country-'.$ti['country']);
+                $capitalOf->setCapital($c);
+                $manager->persist($capitalOf);
+                $manager->flush();
+            }
         }
     }
 }
