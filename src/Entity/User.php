@@ -56,6 +56,13 @@ class User extends IdEntity implements UserInterface, \Serializable {
      */
     protected $bot = false;
     
+    /**
+     * @ORM\ManyToOne(targetEntity="Person")
+     * @ORM\JoinColumn(name="character_id", referencedColumnName="id", nullable=true)
+     * @var Person 
+     */
+    protected $character = null;
+    
     public function eraseCredentials() { }
     
     public function getRoles() {

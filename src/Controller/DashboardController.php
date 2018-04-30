@@ -16,7 +16,7 @@ class DashboardController extends InternalController {
      * @Template()
      */
     public function index() {
-        $this->addMessage('Hello World', static::MSGLVL_ERROR, false);
+        // grab companies
         return [];
     }
 }

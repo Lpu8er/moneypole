@@ -25,7 +25,7 @@ class City extends NamedEntity
     
     /**
      *
-     * @ORM\Column(name="population", type="integer")
+     * @ORM\Column(name="population", type="bigint")
      * @var int
      */
     protected $population;
@@ -35,63 +35,63 @@ class City extends NamedEntity
      * @ORM\Column(name="fire_security", type="decimal")
      * @var float
      */
-    protected $fireSecurity;
+    protected $fireSecurity = 0.;
     
     /**
      *
      * @ORM\Column(name="insecurity", type="decimal")
      * @var float
      */
-    protected $insecurity;
+    protected $insecurity = 0.;
     
     /**
      *
      * @ORM\Column(name="health", type="decimal")
      * @var float
      */
-    protected $health;
+    protected $health = 0.;
     
     /**
      *
      * @ORM\Column(name="pollution", type="decimal")
      * @var float
      */
-    protected $pollution;
+    protected $pollution = 0.;
     
     /**
      *
      * @ORM\Column(name="fire_budget", type="decimal")
      * @var float
      */
-    protected $fireBudget;
+    protected $fireBudget = 0.;
     
     /**
      *
      * @ORM\Column(name="security_budget", type="decimal")
      * @var float
      */
-    protected $securityBudget;
+    protected $securityBudget = 0.;
     
     /**
      *
      * @ORM\Column(name="health_budget", type="decimal")
      * @var float
      */
-    protected $healthBudget;
+    protected $healthBudget = 0.;
     
     /**
      *
      * @ORM\Column(name="green_budget", type="decimal")
      * @var float
      */
-    protected $greenBudget;
+    protected $greenBudget = 0.;
     
     /**
      *
      * @ORM\Column(name="build_budget", type="decimal")
      * @var float
      */
-    protected $buildBudget;
+    protected $buildBudget = 0.;
     
     /**
      * Taxe de sol, déduite chaque semaine par batiment par m2

@@ -22,4 +22,18 @@ class Country extends NamedEntity
      * @var float
      */
     protected $livingTax;
+    
+    /**
+     * Peut etre choisi en nation de depart
+     * @ORM\Column(name="available_start", type="boolean")
+     * @var bool
+     */
+    protected $availableStart = false;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="City")
+     * @ORM\JoinColumn(name="capital_id", referencedColumnName="id", nullable=true)
+     * @var City 
+     */
+    protected $capital;
 }
