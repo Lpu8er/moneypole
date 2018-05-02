@@ -11,7 +11,7 @@ use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 /**
  * Description of CityFixtures
  *
- * @author captivea-qch
+ * @author lpu8er
  */
 class CityFixtures extends Fixture implements ContainerAwareInterface, DependentFixtureInterface {
     protected $container;

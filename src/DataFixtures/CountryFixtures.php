@@ -11,7 +11,7 @@ use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 /**
  * Description of CountryFixtures
  *
- * @author captivea-qch
+ * @author lpu8er
  */
 class CountryFixtures extends Fixture implements ContainerAwareInterface, DependentFixtureInterface {
     protected $container;

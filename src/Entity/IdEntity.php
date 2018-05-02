@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Description of IdEntity
  *
- * @author captivea-qch
+ * @author lpu8er
  */
 abstract class IdEntity extends AbstractEntity {
     /**

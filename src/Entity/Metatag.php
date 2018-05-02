@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Description of Metatag
  *
- * @author captivea-qch
+ * @author lpu8er
  */
 class Metatag {
     /**

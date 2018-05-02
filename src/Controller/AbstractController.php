@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 /**
  * Description of AbstractController
  *
- * @author captivea-qch
+ * @author lpu8er
  */
 abstract class AbstractController extends Controller {
     const MSGLVL_ERROR = 'error';

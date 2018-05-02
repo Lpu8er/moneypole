@@ -11,7 +11,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 /**
  * Description of ExternalController
  *
- * @author captivea-qch
+ * @author lpu8er
  */
 class ExternalController extends AbstractController {
     /**

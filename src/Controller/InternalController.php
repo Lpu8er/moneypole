@@ -6,7 +6,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Description of InternalController
  *
- * @author captivea-qch
+ * @author lpu8er
  * @Route("/game", name="game_redirect")
  */
 class InternalController extends AbstractController {

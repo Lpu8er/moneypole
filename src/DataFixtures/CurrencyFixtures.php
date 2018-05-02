@@ -10,7 +10,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Description of CurrencyFixtures
  *
- * @author captivea-qch
+ * @author lpu8er
  */
 class CurrencyFixtures extends Fixture implements ContainerAwareInterface {
     protected $container;

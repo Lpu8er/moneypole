@@ -10,7 +10,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Description of UserFixtures
  *
- * @author captivea-qch
+ * @author lpu8er
  */
 class UserFixtures extends Fixture implements ContainerAwareInterface {
     protected $container;

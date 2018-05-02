@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Description of ProductionQueue
  *
- * @author captivea-qch
+ * @author lpu8er
  */
 class ProductionQueue {
     /**

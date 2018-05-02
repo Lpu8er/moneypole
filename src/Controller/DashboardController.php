@@ -7,7 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 /**
  * Description of DashboardController
  *
- * @author captivea-qch
+ * @author lpu8er
  * @Route("/game/dash")
  */
 class DashboardController extends InternalController {

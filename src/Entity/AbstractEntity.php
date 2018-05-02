@@ -4,7 +4,7 @@ namespace App\Entity;
 /**
  * Description of AbstractEntity
  *
- * @author captivea-qch
+ * @author lpu8er
  */
 abstract class AbstractEntity {
     /**
