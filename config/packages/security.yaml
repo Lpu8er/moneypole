@@ -3,7 +3,6 @@ security:
         App\Entity\User:
             algorithm: bcrypt
     providers:
-        in_memory: { memory: ~ }
         classic:
             entity:
                 class: App\Entity\User
@@ -19,6 +18,7 @@ security:
                 login_path: login
                 check_path: login
                 csrf_token_generator: security.csrf.token_manager
+                default_target_path: dashboard_index
             provider: classic
         
     # Easy way to control access for large sections of your site
@@ -26,6 +26,7 @@ security:
     access_control:
         - { path: ^/$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/info, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/subscribe, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/, roles: ROLE_USER }
         # - { path: ^/admin, roles: ROLE_ADMIN }

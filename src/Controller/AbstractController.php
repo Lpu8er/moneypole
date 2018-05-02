@@ -42,7 +42,7 @@ abstract class AbstractController extends Controller {
      * @param array $wrap
      * @return array
      */
-    protected function wrap(array $wrap = []): array {
+    protected function wrap(array $wrap = []) {
         $wrap['_messages'] = $this->messages;
         return $wrap;
     }

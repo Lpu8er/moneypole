@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand"
+       href="#"
+       title="Moneypole">※ Moneypole</a>
+    <button class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link"
+                   href="{{ path('index') }}">Accueil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"
+                   href="{{ path('info') }}">Informations</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"
+                   href="{{ path('subscribe') }}">Inscription</a>
+            </li>
+        </ul>
+        <form class="form-inline my-sm-0"
+              method="post"
+              action="{{ path('login') }}">
+            <div class="my-sm-0 input-group">
+                <input type="text"
+                       class="form-control form-control-sm mr-sm-1"
+                       name="_username"
+                       placeholder="Login" />
+                <input type="passwword"
+                       class="form-control form-control-sm mr-sm-1"
+                       name="_password"
+                       placeholder="Password" />
+                <button class="btn btn-sm btn-outline-primary my-2 my-sm-0" type="submit">Connexion</button>
+            </div>
+        </form>
+    </div>
+</nav>

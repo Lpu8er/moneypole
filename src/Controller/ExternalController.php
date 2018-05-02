@@ -15,11 +15,31 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
  */
 class ExternalController extends AbstractController {
     /**
+     * 
+     * @param mixed $returns the default return value
+     * @return mixed
+     */
+    protected function redirectLoggedIn($returns = []) {
+        if($this->isGranted('IS_AUTHENTICATED_FULLY')) {
+            $returns = $this->redirectToRoute('dashboard_index');
+        }
+        return $returns;
+    }
+    
+    /**
+     * 
+     * @param array $wrap
+     * @return array
+     */
+    protected function wrap(array $wrap = []) {
+        return $this->redirectLoggedIn(parent::wrap($wrap));
+    }
+    
+    /**
      * @Route("/", name="index")
      * @Template()
      */
     public function index() {
-        $this->addMessage('Hello World', static::MSGLVL_ERROR, false);
         return $this->wrap();
     }
     
@@ -32,6 +52,14 @@ class ExternalController extends AbstractController {
         if(!empty($error)) {
             $this->addMessage('Authentication error', static::MSGLVL_ERROR);
         }
+        return $this->wrap();
+    }
+    
+    /**
+     * @Route("/info", name="info")
+     * @Template()
+     */
+    public function info() {
         return $this->wrap();
     }
     
