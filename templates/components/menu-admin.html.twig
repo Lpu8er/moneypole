@@ -15,13 +15,17 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link"
-                   href="{{ path('dashboard_index') }}">Accueil</a>
+                   href="{{ path('admin_index') }}">Accueil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"
+                   href="{{ path('admin_countries') }}">Gestion des Pays</a>
             </li>
         </ul>
         <div class="my-sm-0">
             {{ app.user.getDisplayName }}
-            {%if app.user.admin %}<a class="nav-link"
-               href="{{ path('admin_index') }}">Admin</a>{% endif %}
+            <a class="nav-link"
+               href="{{ path('dashboard_index') }}">Retour au jeu</a>
             <a href="#"
                class="btn btn-sm btn-outline-danger">
                 &#9211;

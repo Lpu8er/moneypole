@@ -11,10 +11,10 @@ class Company extends NamedEntity
 {
     /**
      * @ORM\ManyToOne(targetEntity="Building")
-     * @ORM\JoinColumn(name="hq_building_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="hq_building_id", referencedColumnName="id", nullable=true)
      * @var Building 
      */
-    protected $hqBuilding;
+    protected $hqBuilding = null;
     
     /**
      * @ORM\ManyToOne(targetEntity="City")

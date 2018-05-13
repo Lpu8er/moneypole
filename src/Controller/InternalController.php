@@ -5,6 +5,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 use App\Entity\Person;
 use App\Entity\Company;
+use App\Entity\Wallet;
 
 /**
  * Description of InternalController
@@ -18,6 +19,19 @@ class InternalController extends AbstractController {
      */
     public function index() {
         return $this->redirectToRoute('game_dashboard');
+    }
+    
+    /**
+     * 
+     * @param array $wrap
+     * @return type
+     */
+    protected function wrap(array $wrap = array()) {
+        $returns = parent::wrap($wrap);
+        $returns['person'] = $this->getCurrentPerson();
+        $companies = $this->getCurrentCompanies();
+        $returns['hasCompany'] = !empty($companies);
+        return $returns;
     }
     
     /**
@@ -36,5 +50,18 @@ class InternalController extends AbstractController {
     protected function getCurrentCompanies() {
         $person = $this->getCurrentPerson();
         return empty($person)? []:$this->getDoctrine()->getRepository(Company::class)->findByBoss($person->getId());
+    }
+    
+    /**
+     * 
+     * @return Wallet[]
+     */
+    protected function getPersonalWallets() {
+        $wallets = [];
+        $person = $this->getCurrentPerson();
+        if(!empty($person)) {
+            $wallets = $this->getDoctrine()->getRepository(Wallet::class)->findByNamedEntity($person);
+        }
+        return $wallets;
     }
 }

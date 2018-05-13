@@ -51,6 +51,7 @@ class CityFixtures extends Fixture implements ContainerAwareInterface, Dependent
                 'btax' => 0.,
                 'ltax' => 0.,
                 'energy' => 0.,
+                'available' => true,
             ],
             'paris' => [
                 'name' => 'Paris',
@@ -69,6 +70,7 @@ class CityFixtures extends Fixture implements ContainerAwareInterface, Dependent
                 'btax' => 0.,
                 'ltax' => 0.,
                 'energy' => 0.,
+                'available' => true,
             ],
             'grenoble' => [
                 'name' => 'Grenoble',
@@ -78,6 +80,7 @@ class CityFixtures extends Fixture implements ContainerAwareInterface, Dependent
                 'btax' => 0.,
                 'ltax' => 0.,
                 'energy' => 0.,
+                'available' => true,
             ],
         ];
         foreach($toInsert as $ik => $ti) {
@@ -91,6 +94,7 @@ class CityFixtures extends Fixture implements ContainerAwareInterface, Dependent
             $c->setBuildTax($ti['btax']);
             $c->setLivingTax($ti['ltax']);
             $c->setEnergyCost($ti['energy']);
+            $c->setAvailableFound(!empty($ti['available']));
             $manager->persist($c);
             $manager->flush();
             $this->setReference('city-'.$ik, $c);

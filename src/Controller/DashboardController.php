@@ -16,8 +16,13 @@ class DashboardController extends InternalController {
      * @Template()
      */
     public function index() {
+        $companies = $this->getCurrentCompanies();
+        // actually, only one company
+        $company = empty($companies)? null:($companies[0]);
+        $wallets = $this->getPersonalWallets();
         return [
-            'companies' => $this->getCurrentCompanies(),
+            'company' => $company,
+            'wallets' => $wallets,
         ];
     }
 }

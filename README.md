@@ -1,18 +1,21 @@
 
 
-RoadMap
+# RoadMap
 
 
-Update "Actions"
+## Update "Multicompanies"
+* plusieurs compagnies
+
+## Update "Actions"
 * pouvoir acheter / vendre des dividendes / actions
 
-Politique
+## Politique
 * pouvoir influer la politique de la ville, de l'état
 
-Sabotage
+## Sabotage
 * pouvoir espionner, saboter
 
-Trends
+## Trends
 * tendances et publicité
 
 

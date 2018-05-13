@@ -120,4 +120,11 @@ class City extends NamedEntity
      * @var float
      */
     protected $energyCost;
+    
+    /**
+     * Peut etre choisi en ville de création
+     * @ORM\Column(name="available_found", type="boolean")
+     * @var bool
+     */
+    protected $availableFound = false;
 }

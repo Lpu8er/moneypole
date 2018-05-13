@@ -1,0 +1,82 @@
+{% extends 'connected.html.twig' %}
+{% block body %}
+    <div class="container">
+        <form method="post"
+              action="{{ path('company_save_create') }}"
+              class="">
+            <div class="form-group">
+                <label for="company_name">Nom de la société</label>
+                <input type="text"
+                       id="company_name"
+                       required="required"
+                       name="name"
+                       class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="company_country">Basée sur</label>
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th rowspan="2"
+                                style="vertical-align: middle;">Ville, Pays</th>
+                            <th colspan="4">Réputation</th>
+                            <th colspan="2">Taxes</th>
+                            <th rowspan="2"
+                                style="vertical-align: middle;">Choisir</th>
+                        </tr>
+                        <tr>
+                            <td>{% include 'components/indexes/fire.html.twig' %}</td>
+                            <td>{% include 'components/indexes/health.html.twig' %}</td>
+                            <td>{% include 'components/indexes/pollution.html.twig' %}</td>
+                            <td>{% include 'components/indexes/security.html.twig' %}</td>
+                            <td>
+                                🏢
+                                /m²
+                            </td>
+                            <td>
+                                🏠
+                                /👤
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for city in cities %}
+                            <tr>
+                                <th>
+                                    {{ city.getName }},
+                                    {{ city.getCountry.getName }}
+                                    {% if city.getCountry.getCapital.getId == city.getId %}(capitale){% endif %}
+                                </th>
+                                <td>{% include 'components/indexes/fire.html.twig' with {'value': city.getFireSecurity} %}</td>
+                                <td>{% include 'components/indexes/health.html.twig' with {'value': city.getHealth}  %}</td>
+                                <td>{% include 'components/indexes/pollution.html.twig' with {'value': city.getPollution}  %}</td>
+                                <td>{% include 'components/indexes/security.html.twig' with {'value': city.getInsecurity}  %}</td>
+                                <td>
+                                    {% include 'components/amount.html.twig' with {'currency': city.getCountry.getCurrency, 'amount': city.getBuildTax, 'title': 'À la construction'} %}
+                                    +
+                                    {% include 'components/amount.html.twig' with {'currency': city.getCountry.getCurrency, 'amount': city.getGroundTax, 'title': 'Par semaine'} %}
+                                    +
+                                    {% include 'components/amount.html.twig' with {'currency': city.getCountry.getCurrency, 'amount': city.getCountry.getGroundTax, 'title': 'Par semaine'} %}
+                                </td>
+                                <td>
+                                    {% include 'components/amount.html.twig' with {'currency': city.getCountry.getCurrency, 'amount': city.getLivingTax, 'title': 'Par semaine'} %}
+                                    +
+                                    {% include 'components/amount.html.twig' with {'currency': city.getCountry.getCurrency, 'amount': city.getCountry.getLivingTax, 'title': 'Par semaine'} %}
+                                </td>
+                                <td>
+                                    <input type="radio"
+                                           name="company_city"
+                                           required="required"
+                                           value="{{ city.getId }}" />
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <p>
+                <button type="submit" class="btn btn-primary">Créer cette société</button>
+            </p>
+        </form>
+    </div>
+{% endblock %}
