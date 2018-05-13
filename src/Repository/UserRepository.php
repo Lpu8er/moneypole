@@ -3,6 +3,8 @@
 namespace App\Repository;
 
 use App\Entity\User;
+use App\Entity\Person;
+use App\Entity\Country;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
@@ -14,21 +16,26 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  */
 class UserRepository extends ServiceEntityRepository
 {
-    public function __construct(RegistryInterface $registry)
-    {
+    public function __construct(RegistryInterface $registry) {
         parent::__construct($registry, User::class);
     }
-
-    /*
-    public function findBySomething($value)
-    {
-        return $this->createQueryBuilder('u')
-            ->where('u.something = :value')->setParameter('value', $value)
-            ->orderBy('u.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+    
+    /**
+     * 
+     * @param User $user
+     * @param Country $country
+     * @return Person
+     */
+    public function generatePerson(User $user, Country $country) {
+        $existing = $this->getEntityManager()->getRepository(Person::class)->findOneByUser($user->getId());
+        if(empty($existing)) {
+            $existing = new Person();
+            $existing->setName('Anonymous');
+            $existing->setNationality($country);
+            $existing->setUser($user);
+            $this->getEntityManager()->persist($existing);
+            $this->getEntityManager()->flush();
+        }
+        return $existing;
     }
-    */
 }

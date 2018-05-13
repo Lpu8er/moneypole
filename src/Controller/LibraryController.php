@@ -5,19 +5,18 @@ use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 /**
- * Description of DashboardController
+ * Description of LibraryController
  *
  * @author lpu8er
- * @Route("/game/dash")
+ * @Route("/game/lib")
  */
-class DashboardController extends InternalController {
+class LibraryController extends InternalController {
     /**
-     * @Route("/", name="dashboard_index")
+     * @Route("/", name="lib_index")
      * @Template()
      */
     public function index() {
-        return [
-            'companies' => $this->getCurrentCompanies(),
-        ];
+        // grab companies
+        return [];
     }
 }
