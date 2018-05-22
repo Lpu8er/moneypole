@@ -11,6 +11,13 @@ class Item extends IdEntity
 {
     /**
      *
+     * @ORM\Column(name="technical", type="string")
+     * @var string 
+     */
+    protected $technical;
+    
+    /**
+     *
      * @ORM\Column(name="name", type="string")
      * @var string
      */

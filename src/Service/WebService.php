@@ -4,7 +4,7 @@ namespace App\Service;
 /**
  * Description of WebService
  *
- * @author captivea-qch
+ * @author lpu8er
  */
 class WebService {
     protected $messages = [];
