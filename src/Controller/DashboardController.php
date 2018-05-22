@@ -23,6 +23,7 @@ class DashboardController extends InternalController {
         return [
             'company' => $company,
             'wallets' => $wallets,
+            'mainWallet' => empty($company)? null:$this->getDoctrine()->getRepository(\App\Entity\Company::class)->getMainWallet($company),
         ];
     }
 }

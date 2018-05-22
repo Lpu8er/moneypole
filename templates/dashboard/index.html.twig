@@ -18,19 +18,30 @@
                 </div>
             </div>
             <div class="card">
+                <div class="card-header">
+                    Votre société
+                </div>
+                {% if company is empty %}
+                    <div class="card-body">
+                        Vous n'avez pas encore de société.
+                        Le jeu serait bien plus intéressant si vous
+                        <a href="{{ path('company_create') }}">montiez votre société et vous lanciez</a> !
+                    </div>
+                {% else %}
                 <div class="card-body">
                     <h5 class="card-title">
-                        Votre société
+                        {{ company.name }}
                     </h5>
-                    <div class="card-body">
-                        {% if company is empty %}
-                            Vous n'avez pas encore de société.
-                            Le jeu serait bien plus intéressant si vous
-                            <a href="{{ path('company_create') }}">montiez votre société et vous lanciez</a> !
+                    <div class="card-text">
+                        {% if mainWallet is empty %}
+                            Fonds épuisés
                         {% else %}
+                            {{ mainWallet.currency.symbol }}
+                            {{ mainWallet.amount }}
                         {% endif %}
                     </div>
                 </div>
+                {% endif %}
             </div>
         </div>
     </div>

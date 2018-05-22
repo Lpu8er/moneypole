@@ -35,21 +35,21 @@ class Company extends NamedEntity
      * @ORM\Column(name="living_participation", type="decimal", precision=12, scale=5)
      * @var float 
      */
-    protected $livingParticipation;
+    protected $livingParticipation = 0.;
     
     /**
      * 
      * @ORM\Column(name="min_wage", type="decimal", precision=12, scale=5)
      * @var float 
      */
-    protected $minWage;
+    protected $minWage = 0.;
     
     /**
      * 
      * @ORM\Column(name="max_wage", type="decimal", precision=12, scale=5)
      * @var float 
      */
-    protected $maxWage;
+    protected $maxWage = 0.;
     
     /**
      * @ORM\ManyToOne(targetEntity="Person")
@@ -63,7 +63,7 @@ class Company extends NamedEntity
      * @ORM\Column(name="boss_wage", type="decimal", precision=12, scale=5)
      * @var float 
      */
-    protected $bossWage;
+    protected $bossWage = 0.;
     
     /**
      * 

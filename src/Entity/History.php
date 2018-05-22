@@ -7,8 +7,14 @@ use Doctrine\ORM\Mapping as ORM;
  * Description of History
  *
  * @author lpu8er
+ * @ORM\Entity(repositoryClass="App\Repository\HistoryRepository")
  */
 class History {
+    const GROUP_MARKET = 'market';
+    const CATEG_UNITPRICE = 'unitprice'; // prix unitaire en marché (vendu ou non)
+    const CATEG_QUANTITY = 'quantity'; // quantity sur le marché
+    const CATEG_SOLD = 'sold'; // total vendu
+    
     /**
      *
      * @ORM\Id

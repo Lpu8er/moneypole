@@ -6,6 +6,8 @@ use App\Entity\Company;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
+use App\Entity\Wallet;
+
 /**
  * @method Company|null find($id, $lockMode = null, $lockVersion = null)
  * @method Company|null findOneBy(array $criteria, array $orderBy = null)
@@ -31,4 +33,21 @@ class CompanyRepository extends ServiceEntityRepository
         ;
     }
     */
+    
+    /**
+     * 
+     * @param Company $company Description
+     * @return Wallet Description
+     */
+    public function getMainWallet(Company $company) {
+        $returns = null;
+        try {
+            $mainCurrency = $company->getHqCountry()->getCurrency();
+            $returns = $this->getEntityManager()->getRepository(Wallet::class)->findOneBy([
+                'company' => $company->getId(),
+                'currency' => $mainCurrency->getId(),
+            ]);
+        } catch(\Exception $e){}
+        return $returns;
+    }
 }

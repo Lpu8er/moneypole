@@ -27,15 +27,18 @@ class CompanyController extends InternalController {
     }
     
     /**
-     * @Route("/create", name="company_save_create")
+     * @Route("/save", name="company_save_create")
      * @Template()
      */
     public function saveCreate(Request $request) {
+        $redirectRoute = 'company_create';
         $companies = $this->getCurrentCompanies();
         if(empty($companies)) {
             $companyName = $request->request->get('name');
             $companyCityId = $request->request->get('city');
-            $companyCity = $this->getDoctrine()->getRepository(City::class)->find($companyCityId);
+            try {
+                $companyCity = $this->getDoctrine()->getRepository(City::class)->find($companyCityId);
+            } catch(\Exception $e){}
             if(!empty($companyCity) && $companyCity->getAvailableFound()) {
                 $company = new Company();
                 $company->setHqCity($companyCity);
@@ -44,7 +47,14 @@ class CompanyController extends InternalController {
                 $company->setName($companyName);
                 $this->getDoctrine()->getManager()->persist($company);
                 $this->getDoctrine()->getManager()->flush();
+                $this->success('Société bien créée !', false);
+                $redirectRoute = 'dashboard_index';
+            } else {
+                $this->error('Impossible de créer cette société basée à cet emplacement !', false);
             }
+        } else {
+            $this->error('Vous possédez déjà une société.', false);
         }
+        return $this->redirectToRoute($redirectRoute);
     }
 }

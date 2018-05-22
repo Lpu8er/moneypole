@@ -17,6 +17,36 @@
                 <a class="nav-link"
                    href="{{ path('dashboard_index') }}">Accueil</a>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle"
+                   href="#"
+                   role="button"
+                   data-toggle="dropdown"
+                   aria-haspopup="true"
+                   aria-expanded="false">
+                    Bourse
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{{ path('market_index') }}">Wall street</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Matières premières</a>
+                    <a class="dropdown-item" href="#">Manufacturés</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Votre marché</a>
+                </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link"
+                   href="{{ path('dashboard_index') }}">Production</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link"
+                   href="{{ path('dashboard_index') }}">Logistique</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link"
+                   href="{{ path('dashboard_index') }}">R&amp;D</a>
+            </li>
         </ul>
         <div class="my-sm-0">
             {{ app.user.getDisplayName }}
