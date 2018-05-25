@@ -27,20 +27,11 @@ class ExternalController extends AbstractController {
     }
     
     /**
-     * 
-     * @param array $wrap
-     * @return array
-     */
-    protected function wrap(array $wrap = []) {
-        return $this->redirectLoggedIn(parent::wrap($wrap));
-    }
-    
-    /**
      * @Route("/", name="index")
      * @Template()
      */
     public function index() {
-        return $this->wrap();
+        return [];
     }
     
     /**
@@ -52,7 +43,7 @@ class ExternalController extends AbstractController {
         if(!empty($error)) {
             $this->addMessage('Authentication error', static::MSGLVL_ERROR);
         }
-        return $this->wrap();
+        return [];
     }
     
     /**
@@ -60,7 +51,7 @@ class ExternalController extends AbstractController {
      * @Template()
      */
     public function info() {
-        return $this->wrap();
+        return [];
     }
     
     /**
@@ -68,7 +59,7 @@ class ExternalController extends AbstractController {
      * @Template()
      */
     public function subscribe() {
-        return $this->wrap();
+        return [];
     }
     
     /**

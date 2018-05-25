@@ -23,19 +23,6 @@ class InternalController extends AbstractController {
     
     /**
      * 
-     * @param array $wrap
-     * @return type
-     */
-    protected function wrap(array $wrap = array()) {
-        $returns = parent::wrap($wrap);
-        $returns['person'] = $this->getCurrentPerson();
-        $companies = $this->getCurrentCompanies();
-        $returns['hasCompany'] = !empty($companies);
-        return $returns;
-    }
-    
-    /**
-     * 
      * @return Person|null
      */
     protected function getCurrentPerson() {
