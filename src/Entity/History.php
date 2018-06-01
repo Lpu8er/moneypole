@@ -35,4 +35,33 @@ class History {
      * @var float
      */
     protected $val;
+    
+    public function getDateHistory(): date {
+        return $this->dateHistory;
+    }
+
+    public function getStrkey() {
+        return $this->strkey;
+    }
+
+    public function getVal() {
+        return $this->val;
+    }
+
+    public function setDateHistory(date $dateHistory) {
+        $this->dateHistory = $dateHistory;
+        return $this;
+    }
+
+    public function setStrkey($strkey) {
+        $this->strkey = $strkey;
+        return $this;
+    }
+
+    public function setVal($val) {
+        $this->val = $val;
+        return $this;
+    }
+
+
 }

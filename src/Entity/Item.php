@@ -59,4 +59,78 @@ class Item extends IdEntity
      */
     protected $universalStartValue;
     
+    public function getTechnical() {
+        return $this->technical;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function getSize() {
+        return $this->size;
+    }
+
+    public function getHappiness() {
+        return $this->happiness;
+    }
+
+    public function getPollution() {
+        return $this->pollution;
+    }
+
+    public function getFirerisk() {
+        return $this->firerisk;
+    }
+
+    public function getHazardness() {
+        return $this->hazardness;
+    }
+
+    public function getUniversalStartValue() {
+        return $this->universalStartValue;
+    }
+
+    public function setTechnical($technical) {
+        $this->technical = $technical;
+        return $this;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+        return $this;
+    }
+
+    public function setSize($size) {
+        $this->size = $size;
+        return $this;
+    }
+
+    public function setHappiness($happiness) {
+        $this->happiness = $happiness;
+        return $this;
+    }
+
+    public function setPollution($pollution) {
+        $this->pollution = $pollution;
+        return $this;
+    }
+
+    public function setFirerisk($firerisk) {
+        $this->firerisk = $firerisk;
+        return $this;
+    }
+
+    public function setHazardness($hazardness) {
+        $this->hazardness = $hazardness;
+        return $this;
+    }
+
+    public function setUniversalStartValue($universalStartValue) {
+        $this->universalStartValue = $universalStartValue;
+        return $this;
+    }
+
+
+    
 }

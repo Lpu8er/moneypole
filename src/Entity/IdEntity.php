@@ -15,4 +15,10 @@ abstract class IdEntity extends AbstractEntity {
      * @ORM\Column(type="integer")
      */
     protected $id;
+    
+    public function getId() {
+        return $this->id;
+    }
+
+
 }

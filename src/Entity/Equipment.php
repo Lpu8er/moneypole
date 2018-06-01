@@ -93,4 +93,132 @@ class Equipment extends IdEntity
      * @var float
      */
     protected $health;
+    
+    public function getName() {
+        return $this->name;
+    }
+
+    public function getSize() {
+        return $this->size;
+    }
+
+    public function getEmployees() {
+        return $this->employees;
+    }
+
+    public function getBuildPoints() {
+        return $this->buildPoints;
+    }
+
+    public function getBuildCost() {
+        return $this->buildCost;
+    }
+
+    public function getRestrictType() {
+        return $this->restrictType;
+    }
+
+    public function getStorage() {
+        return $this->storage;
+    }
+
+    public function getHappiness() {
+        return $this->happiness;
+    }
+
+    public function getPollution() {
+        return $this->pollution;
+    }
+
+    public function getFireHazard() {
+        return $this->fireHazard;
+    }
+
+    public function getSecurity() {
+        return $this->security;
+    }
+
+    public function getSafety() {
+        return $this->safety;
+    }
+
+    public function getEnergy() {
+        return $this->energy;
+    }
+
+    public function getHealth() {
+        return $this->health;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+        return $this;
+    }
+
+    public function setSize($size) {
+        $this->size = $size;
+        return $this;
+    }
+
+    public function setEmployees($employees) {
+        $this->employees = $employees;
+        return $this;
+    }
+
+    public function setBuildPoints($buildPoints) {
+        $this->buildPoints = $buildPoints;
+        return $this;
+    }
+
+    public function setBuildCost($buildCost) {
+        $this->buildCost = $buildCost;
+        return $this;
+    }
+
+    public function setRestrictType($restrictType) {
+        $this->restrictType = $restrictType;
+        return $this;
+    }
+
+    public function setStorage($storage) {
+        $this->storage = $storage;
+        return $this;
+    }
+
+    public function setHappiness($happiness) {
+        $this->happiness = $happiness;
+        return $this;
+    }
+
+    public function setPollution($pollution) {
+        $this->pollution = $pollution;
+        return $this;
+    }
+
+    public function setFireHazard($fireHazard) {
+        $this->fireHazard = $fireHazard;
+        return $this;
+    }
+
+    public function setSecurity($security) {
+        $this->security = $security;
+        return $this;
+    }
+
+    public function setSafety($safety) {
+        $this->safety = $safety;
+        return $this;
+    }
+
+    public function setEnergy($energy) {
+        $this->energy = $energy;
+        return $this;
+    }
+
+    public function setHealth($health) {
+        $this->health = $health;
+        return $this;
+    }
+
+
 }

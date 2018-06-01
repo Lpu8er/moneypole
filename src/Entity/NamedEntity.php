@@ -14,8 +14,19 @@ abstract class NamedEntity extends IdEntity
 {
     /**
      *
-     * @var type 
+     * @var string 
      * @ORM\Column(type="string")
      */
     protected $name;
+    
+    public function getName(): string {
+        return $this->name;
+    }
+
+    public function setName(string $name) {
+        $this->name = $name;
+        return $this;
+    }
+
+
 }

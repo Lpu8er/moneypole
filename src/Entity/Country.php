@@ -43,4 +43,51 @@ class Country extends NamedEntity
      * @var Currency 
      */
     protected $currency;
+    
+    public function getGroundTax() {
+        return $this->groundTax;
+    }
+
+    public function getLivingTax() {
+        return $this->livingTax;
+    }
+
+    public function getAvailableStart() {
+        return $this->availableStart;
+    }
+
+    public function getCapital(): City {
+        return $this->capital;
+    }
+
+    public function getCurrency(): Currency {
+        return $this->currency;
+    }
+
+    public function setGroundTax($groundTax) {
+        $this->groundTax = $groundTax;
+        return $this;
+    }
+
+    public function setLivingTax($livingTax) {
+        $this->livingTax = $livingTax;
+        return $this;
+    }
+
+    public function setAvailableStart($availableStart) {
+        $this->availableStart = $availableStart;
+        return $this;
+    }
+
+    public function setCapital(City $capital) {
+        $this->capital = $capital;
+        return $this;
+    }
+
+    public function setCurrency(Currency $currency) {
+        $this->currency = $currency;
+        return $this;
+    }
+
+
 }

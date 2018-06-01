@@ -32,4 +32,33 @@ class Wallet extends AbstractEntity
      * @var float
      */
     protected $amount = 0.00;
+    
+    public function getNamedEntity(): type {
+        return $this->namedEntity;
+    }
+
+    public function getCurrency(): type {
+        return $this->currency;
+    }
+
+    public function getAmount() {
+        return $this->amount;
+    }
+
+    public function setNamedEntity(type $namedEntity) {
+        $this->namedEntity = $namedEntity;
+        return $this;
+    }
+
+    public function setCurrency(type $currency) {
+        $this->currency = $currency;
+        return $this;
+    }
+
+    public function setAmount($amount) {
+        $this->amount = $amount;
+        return $this;
+    }
+
+
 }

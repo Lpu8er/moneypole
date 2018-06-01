@@ -32,4 +32,33 @@ class Extractor
      * @var int
      */
     protected $amount = 0;
+    
+    public function getCity(): type {
+        return $this->city;
+    }
+
+    public function getNatural(): type {
+        return $this->natural;
+    }
+
+    public function getAmount() {
+        return $this->amount;
+    }
+
+    public function setCity(type $city) {
+        $this->city = $city;
+        return $this;
+    }
+
+    public function setNatural(type $natural) {
+        $this->natural = $natural;
+        return $this;
+    }
+
+    public function setAmount($amount) {
+        $this->amount = $amount;
+        return $this;
+    }
+
+
 }

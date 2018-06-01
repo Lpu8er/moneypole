@@ -78,4 +78,96 @@ class Company extends NamedEntity
      * @var int
      */
     protected $saddies = 0;
+    
+    public function getHqBuilding(): Building {
+        return $this->hqBuilding;
+    }
+
+    public function getHqCity(): City {
+        return $this->hqCity;
+    }
+
+    public function getHqCountry(): Country {
+        return $this->hqCountry;
+    }
+
+    public function getLivingParticipation() {
+        return $this->livingParticipation;
+    }
+
+    public function getMinWage() {
+        return $this->minWage;
+    }
+
+    public function getMaxWage() {
+        return $this->maxWage;
+    }
+
+    public function getBoss(): Person {
+        return $this->boss;
+    }
+
+    public function getBossWage() {
+        return $this->bossWage;
+    }
+
+    public function getHappies() {
+        return $this->happies;
+    }
+
+    public function getSaddies() {
+        return $this->saddies;
+    }
+
+    public function setHqBuilding(Building $hqBuilding) {
+        $this->hqBuilding = $hqBuilding;
+        return $this;
+    }
+
+    public function setHqCity(City $hqCity) {
+        $this->hqCity = $hqCity;
+        return $this;
+    }
+
+    public function setHqCountry(Country $hqCountry) {
+        $this->hqCountry = $hqCountry;
+        return $this;
+    }
+
+    public function setLivingParticipation($livingParticipation) {
+        $this->livingParticipation = $livingParticipation;
+        return $this;
+    }
+
+    public function setMinWage($minWage) {
+        $this->minWage = $minWage;
+        return $this;
+    }
+
+    public function setMaxWage($maxWage) {
+        $this->maxWage = $maxWage;
+        return $this;
+    }
+
+    public function setBoss(Person $boss) {
+        $this->boss = $boss;
+        return $this;
+    }
+
+    public function setBossWage($bossWage) {
+        $this->bossWage = $bossWage;
+        return $this;
+    }
+
+    public function setHappies($happies) {
+        $this->happies = $happies;
+        return $this;
+    }
+
+    public function setSaddies($saddies) {
+        $this->saddies = $saddies;
+        return $this;
+    }
+
+
 }

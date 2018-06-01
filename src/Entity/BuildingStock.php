@@ -31,4 +31,33 @@ class BuildingStock
      * @var int
      */
     protected $nb = 0;
+    
+    public function getBuilding(): Building {
+        return $this->building;
+    }
+
+    public function getItem(): Item {
+        return $this->item;
+    }
+
+    public function getNb() {
+        return $this->nb;
+    }
+
+    public function setBuilding(Building $building) {
+        $this->building = $building;
+        return $this;
+    }
+
+    public function setItem(Item $item) {
+        $this->item = $item;
+        return $this;
+    }
+
+    public function setNb($nb) {
+        $this->nb = $nb;
+        return $this;
+    }
+
+
 }

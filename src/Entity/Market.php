@@ -37,4 +37,42 @@ class Market extends AbstractEntity
      * @var float
      */
     protected $unitPrice = 0.;
+    
+    public function getShop(): type {
+        return $this->shop;
+    }
+
+    public function getItem(): type {
+        return $this->item;
+    }
+
+    public function getNb() {
+        return $this->nb;
+    }
+
+    public function getUnitPrice() {
+        return $this->unitPrice;
+    }
+
+    public function setShop(type $shop) {
+        $this->shop = $shop;
+        return $this;
+    }
+
+    public function setItem(type $item) {
+        $this->item = $item;
+        return $this;
+    }
+
+    public function setNb($nb) {
+        $this->nb = $nb;
+        return $this;
+    }
+
+    public function setUnitPrice($unitPrice) {
+        $this->unitPrice = $unitPrice;
+        return $this;
+    }
+
+
 }

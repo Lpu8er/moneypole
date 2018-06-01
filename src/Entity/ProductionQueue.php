@@ -53,4 +53,60 @@ class ProductionQueue {
      * @ORM\Column(name="points", type="integer")
      */
     protected $points;
+    
+    public function getBuilding(): Building {
+        return $this->building;
+    }
+
+    public function getQueueIndex() {
+        return $this->queueIndex;
+    }
+
+    public function getRecipe(): Recipe {
+        return $this->recipe;
+    }
+
+    public function getNb() {
+        return $this->nb;
+    }
+
+    public function getCurrent() {
+        return $this->current;
+    }
+
+    public function getPoints() {
+        return $this->points;
+    }
+
+    public function setBuilding(Building $building) {
+        $this->building = $building;
+        return $this;
+    }
+
+    public function setQueueIndex($queueIndex) {
+        $this->queueIndex = $queueIndex;
+        return $this;
+    }
+
+    public function setRecipe(Recipe $recipe) {
+        $this->recipe = $recipe;
+        return $this;
+    }
+
+    public function setNb($nb) {
+        $this->nb = $nb;
+        return $this;
+    }
+
+    public function setCurrent($current) {
+        $this->current = $current;
+        return $this;
+    }
+
+    public function setPoints($points) {
+        $this->points = $points;
+        return $this;
+    }
+
+
 }

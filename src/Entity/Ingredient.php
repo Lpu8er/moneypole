@@ -31,4 +31,33 @@ class Ingredient
      * @var int 
      */
     protected $nb;
+    
+    public function getRecipe(): type {
+        return $this->recipe;
+    }
+
+    public function getItem(): type {
+        return $this->item;
+    }
+
+    public function getNb() {
+        return $this->nb;
+    }
+
+    public function setRecipe(type $recipe) {
+        $this->recipe = $recipe;
+        return $this;
+    }
+
+    public function setItem(type $item) {
+        $this->item = $item;
+        return $this;
+    }
+
+    public function setNb($nb) {
+        $this->nb = $nb;
+        return $this;
+    }
+
+
 }

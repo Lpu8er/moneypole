@@ -22,4 +22,24 @@ class Metatag {
      * @var string
      */
     protected $displayName;
+    
+    public function getStrkey() {
+        return $this->strkey;
+    }
+
+    public function getDisplayName() {
+        return $this->displayName;
+    }
+
+    public function setStrkey($strkey) {
+        $this->strkey = $strkey;
+        return $this;
+    }
+
+    public function setDisplayName($displayName) {
+        $this->displayName = $displayName;
+        return $this;
+    }
+
+
 }

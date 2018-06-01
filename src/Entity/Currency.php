@@ -29,4 +29,33 @@ class Currency extends IdEntity
      * @var string
      */
     protected $convertRate;
+    
+    public function getName() {
+        return $this->name;
+    }
+
+    public function getSymbol() {
+        return $this->symbol;
+    }
+
+    public function getConvertRate() {
+        return $this->convertRate;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+        return $this;
+    }
+
+    public function setSymbol($symbol) {
+        $this->symbol = $symbol;
+        return $this;
+    }
+
+    public function setConvertRate($convertRate) {
+        $this->convertRate = $convertRate;
+        return $this;
+    }
+
+
 }

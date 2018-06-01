@@ -40,4 +40,51 @@ class Recipe extends IdEntity
      * @ORM\Column(name="energy", type="integer")
      */
     protected $energy;
+    
+    public function getName() {
+        return $this->name;
+    }
+
+    public function getResultProduct(): Product {
+        return $this->resultProduct;
+    }
+
+    public function getPoints() {
+        return $this->points;
+    }
+
+    public function getPollution() {
+        return $this->pollution;
+    }
+
+    public function getEnergy() {
+        return $this->energy;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+        return $this;
+    }
+
+    public function setResultProduct(Product $resultProduct) {
+        $this->resultProduct = $resultProduct;
+        return $this;
+    }
+
+    public function setPoints($points) {
+        $this->points = $points;
+        return $this;
+    }
+
+    public function setPollution($pollution) {
+        $this->pollution = $pollution;
+        return $this;
+    }
+
+    public function setEnergy($energy) {
+        $this->energy = $energy;
+        return $this;
+    }
+
+
 }

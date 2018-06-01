@@ -31,4 +31,21 @@ class BuildingWallet extends AbstractEntity
      * @var float
      */
     protected $amount;
+    
+    public function setBuilding(type $building) {
+        $this->building = $building;
+        return $this;
+    }
+
+    public function setCurrency(type $currency) {
+        $this->currency = $currency;
+        return $this;
+    }
+
+    public function setAmount($amount) {
+        $this->amount = $amount;
+        return $this;
+    }
+
+
 }

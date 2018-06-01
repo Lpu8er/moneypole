@@ -125,4 +125,175 @@ class Building extends IdEntity {
      * @var int
      */
     protected $energy = 0;
+    
+    public function getName() {
+        return $this->name;
+    }
+
+    public function getCity(): City {
+        return $this->city;
+    }
+
+    public function getBaseSize() {
+        return $this->baseSize;
+    }
+
+    public function getCurrentSize() {
+        return $this->currentSize;
+    }
+
+    public function getBaseFireHazard() {
+        return $this->baseFireHazard;
+    }
+
+    public function getCurrentFireHazard() {
+        return $this->currentFireHazard;
+    }
+
+    public function getBaseSecurity() {
+        return $this->baseSecurity;
+    }
+
+    public function getCurrentSecurity() {
+        return $this->currentSecurity;
+    }
+
+    public function getBaseSafety() {
+        return $this->baseSafety;
+    }
+
+    public function getCurrentSafety() {
+        return $this->currentSafety;
+    }
+
+    public function getBasePollution() {
+        return $this->basePollution;
+    }
+
+    public function getCurrentPollution() {
+        return $this->currentPollution;
+    }
+
+    public function getBaseEmployees() {
+        return $this->baseEmployees;
+    }
+
+    public function getCurrentEmployees() {
+        return $this->currentEmployees;
+    }
+
+    public function getCompany(): Company {
+        return $this->company;
+    }
+
+    public function getBuilding() {
+        return $this->building;
+    }
+
+    public function getBuildPoints() {
+        return $this->buildPoints;
+    }
+
+    public function getStartBuild(): \DateTime {
+        return $this->startBuild;
+    }
+
+    public function getEnergy() {
+        return $this->energy;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+        return $this;
+    }
+
+    public function setCity(City $city) {
+        $this->city = $city;
+        return $this;
+    }
+
+    public function setBaseSize($baseSize) {
+        $this->baseSize = $baseSize;
+        return $this;
+    }
+
+    public function setCurrentSize($currentSize) {
+        $this->currentSize = $currentSize;
+        return $this;
+    }
+
+    public function setBaseFireHazard($baseFireHazard) {
+        $this->baseFireHazard = $baseFireHazard;
+        return $this;
+    }
+
+    public function setCurrentFireHazard($currentFireHazard) {
+        $this->currentFireHazard = $currentFireHazard;
+        return $this;
+    }
+
+    public function setBaseSecurity($baseSecurity) {
+        $this->baseSecurity = $baseSecurity;
+        return $this;
+    }
+
+    public function setCurrentSecurity($currentSecurity) {
+        $this->currentSecurity = $currentSecurity;
+        return $this;
+    }
+
+    public function setBaseSafety($baseSafety) {
+        $this->baseSafety = $baseSafety;
+        return $this;
+    }
+
+    public function setCurrentSafety($currentSafety) {
+        $this->currentSafety = $currentSafety;
+        return $this;
+    }
+
+    public function setBasePollution($basePollution) {
+        $this->basePollution = $basePollution;
+        return $this;
+    }
+
+    public function setCurrentPollution($currentPollution) {
+        $this->currentPollution = $currentPollution;
+        return $this;
+    }
+
+    public function setBaseEmployees($baseEmployees) {
+        $this->baseEmployees = $baseEmployees;
+        return $this;
+    }
+
+    public function setCurrentEmployees($currentEmployees) {
+        $this->currentEmployees = $currentEmployees;
+        return $this;
+    }
+
+    public function setCompany(Company $company) {
+        $this->company = $company;
+        return $this;
+    }
+
+    public function setBuilding($building) {
+        $this->building = $building;
+        return $this;
+    }
+
+    public function setBuildPoints($buildPoints) {
+        $this->buildPoints = $buildPoints;
+        return $this;
+    }
+
+    public function setStartBuild(\DateTime $startBuild) {
+        $this->startBuild = $startBuild;
+        return $this;
+    }
+
+    public function setEnergy($energy) {
+        $this->energy = $energy;
+        return $this;
+    }
 }
