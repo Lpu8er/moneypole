@@ -79,6 +79,17 @@ class Company extends NamedEntity
      */
     protected $saddies = 0;
     
+    /**
+     *
+     * @var Buildings[]
+     * @ORM\OneToMany(targetEntity="Building", mappedBy="company")
+     */
+    protected $buildings;
+    
+    public function __construct() {
+        $this->buildings = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
     public function getHqBuilding(): Building {
         return $this->hqBuilding;
     }
@@ -166,6 +177,15 @@ class Company extends NamedEntity
 
     public function setSaddies($saddies) {
         $this->saddies = $saddies;
+        return $this;
+    }
+    
+    public function getBuildings() {
+        return $this->buildings;
+    }
+
+    public function setBuildings($buildings) {
+        $this->buildings = $buildings;
         return $this;
     }
 

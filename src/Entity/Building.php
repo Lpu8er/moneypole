@@ -96,7 +96,7 @@ class Building extends IdEntity {
      */
     protected $currentEmployees;
     /**
-     * @ORM\ManyToOne(targetEntity="Company")
+     * @ORM\ManyToOne(targetEntity="Company", inversedBy="buildings")
      * @ORM\JoinColumn(name="company_id", referencedColumnName="id", nullable=true)
      * @var Company 
      */

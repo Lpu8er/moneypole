@@ -1,0 +1,6 @@
+{% if building.btype == 'factory' %}Usine
+{% elseif building.btype == 'shop' %}Boutique
+{% elseif building.btype == 'warehouse' %}Entrepot
+{% elseif building.btype == 'office' %}Bureaux
+{% else %}Générique
+{% endif %}

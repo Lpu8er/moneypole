@@ -36,8 +36,8 @@
                         {% if mainWallet is empty %}
                             Fonds épuisés
                         {% else %}
-                            {{ mainWallet.currency.symbol }}
-                            {{ mainWallet.amount }}
+                            {{ mainWallet.getCurrency.symbol }}
+                            {{ mainWallet.getAmount }}
                         {% endif %}
                     </div>
                 </div>
