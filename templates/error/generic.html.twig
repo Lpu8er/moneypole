@@ -1,0 +1,9 @@
+{% extends 'connected.html.twig' %}
+{% block body %}
+    <div class="container">
+        <div class="alert alert-danger">
+            <h2 class="alert-heading">{% block errorTitle %}Erreur{% endblock %}</h2>
+            {% block errors %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}

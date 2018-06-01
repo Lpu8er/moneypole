@@ -57,4 +57,24 @@ class CompanyController extends InternalController {
         }
         return $this->redirectToRoute($redirectRoute);
     }
+    
+    /**
+     * @Route("/{company}", name="company_detail", requirements={"company"="\d+"})
+     * @Template()
+     */
+    public function detail($company) {
+        try {
+            $companyDetails = $this->getDoctrine()->getRepository(Company::class)->find($company);
+            if(!empty($companyDetails)) {
+                $returns = [
+                    'company' => $companyDetails,
+                ];
+            } else {
+                $returns = $this->redirectToRoute('error_404');
+            }
+        } catch (Exception $ex) {
+            $returns = $this->redirectToRoute('error_404');
+        }
+        return $returns;
+    }
 }

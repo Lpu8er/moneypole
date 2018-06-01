@@ -30,7 +30,7 @@
                 {% else %}
                 <div class="card-body">
                     <h5 class="card-title">
-                        {{ company.name }}
+                        <a href="{{ path('company_detail', {'company': company.getId}) }}">{{ company.getName }}</a>
                     </h5>
                     <div class="card-text">
                         {% if mainWallet is empty %}

@@ -1,0 +1,12 @@
+{% extends 'errors/generic.html.twig' %}
+{% block errorTitle %}Ressource introuvable{% endblock %}
+{% block errors %}
+    <p>
+        Cet élément est introuvable.
+    </p>
+    {% if backLink is defined and backLink is not empty %}
+        <p>
+            <a href="{{ backLink }}">Retour</a>
+        </p>
+    {% endif %}
+{% endblock %}
