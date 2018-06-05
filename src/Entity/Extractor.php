@@ -33,11 +33,11 @@ class Extractor
      */
     protected $amount = 0;
     
-    public function getCity(): type {
+    public function getCity(): City {
         return $this->city;
     }
 
-    public function getNatural(): type {
+    public function getNatural(): Natural {
         return $this->natural;
     }
 
@@ -45,12 +45,12 @@ class Extractor
         return $this->amount;
     }
 
-    public function setCity(type $city) {
+    public function setCity(City $city) {
         $this->city = $city;
         return $this;
     }
 
-    public function setNatural(type $natural) {
+    public function setNatural(Natural $natural) {
         $this->natural = $natural;
         return $this;
     }

@@ -86,8 +86,16 @@ class Company extends NamedEntity
      */
     protected $buildings;
     
+    /**
+     *
+     * @var Wallet[]
+     * @ORM\OneToMany(targetEntity="Wallet", mappedBy="namedEntity")
+     */
+    protected $wallets;
+    
     public function __construct() {
         $this->buildings = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->wallets = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
     public function getHqBuilding(): Building {
@@ -189,5 +197,12 @@ class Company extends NamedEntity
         return $this;
     }
 
+    public function getWallets() {
+        return $this->wallets;
+    }
 
+    public function setWallets($wallets) {
+        $this->wallets = $wallets;
+        return $this;
+    }
 }

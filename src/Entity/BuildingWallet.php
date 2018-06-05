@@ -32,12 +32,12 @@ class BuildingWallet extends AbstractEntity
      */
     protected $amount;
     
-    public function setBuilding(type $building) {
+    public function setBuilding(Building $building) {
         $this->building = $building;
         return $this;
     }
 
-    public function setCurrency(type $currency) {
+    public function setCurrency(Currency $currency) {
         $this->currency = $currency;
         return $this;
     }

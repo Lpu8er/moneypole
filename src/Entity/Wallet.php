@@ -33,11 +33,11 @@ class Wallet extends AbstractEntity
      */
     protected $amount = 0.00;
     
-    public function getNamedEntity(): type {
+    public function getNamedEntity(): NamedEntity {
         return $this->namedEntity;
     }
 
-    public function getCurrency(): type {
+    public function getCurrency(): Currency {
         return $this->currency;
     }
 
@@ -45,12 +45,12 @@ class Wallet extends AbstractEntity
         return $this->amount;
     }
 
-    public function setNamedEntity(type $namedEntity) {
+    public function setNamedEntity(NamedEntity $namedEntity) {
         $this->namedEntity = $namedEntity;
         return $this;
     }
 
-    public function setCurrency(type $currency) {
+    public function setCurrency(Currency $currency) {
         $this->currency = $currency;
         return $this;
     }

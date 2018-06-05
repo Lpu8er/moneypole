@@ -32,11 +32,11 @@ class Ingredient
      */
     protected $nb;
     
-    public function getRecipe(): type {
+    public function getRecipe(): Recipe {
         return $this->recipe;
     }
 
-    public function getItem(): type {
+    public function getItem(): Item {
         return $this->item;
     }
 
@@ -44,12 +44,12 @@ class Ingredient
         return $this->nb;
     }
 
-    public function setRecipe(type $recipe) {
+    public function setRecipe(Recipe $recipe) {
         $this->recipe = $recipe;
         return $this;
     }
 
-    public function setItem(type $item) {
+    public function setItem(Item $item) {
         $this->item = $item;
         return $this;
     }

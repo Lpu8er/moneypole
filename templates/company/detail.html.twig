@@ -3,30 +3,61 @@
     <div class="container">
         <h2>{{ company.name }}</h2>
         <ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Active</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#">Disabled</a>
-  </li>
-</ul>
-        {% for buildings in company.buildings %}
-        <div class="card text-white {% include 'components/building-colors.html.twig' %}">
-            <div class="card-header">
-                {% include 'components/building-names.html.twig' %}
+            <li class="nav-item">
+                <a class="nav-link active"
+                   data-toggle="tab"
+                   href="#companyWallet">Portefeuille</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"
+                   data-toggle="tab"
+                   href="#companyBuildings">Établissements</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="companyWallet"
+                 class="tab-pane active">
+                <ul class="list-group">
+                {% for wallet in company.wallets %}
+                    <li class="list-group-item flex-column{% if wallet.getCurrency.id == company.hqCountry.id %} active{% endif %}">
+                        <div class="d-flex w-100 justify-content-between">
+                            {% include 'components/amount.html.twig' with {'currency': wallet.getCurrency, 'amount': wallet.amount} %}
+                            {% if wallet.getCurrency.id == company.hqCountry.id %}
+                                <strong>Devise locale</strong>
+                            {% else %}
+                                <small>Taux {{ (wallet.currency.convertRate * company.hqCountry.currency.convertRate)|number_format(5) }}</small>
+                            {% endif %}
+                            <div class="btn-group">
+                                <a href="#"
+                                   class="btn btn-info"
+                                   title="Transférer entre ">⮃</a>
+                                <a href="#"
+                                   class="btn btn-danger"
+                                   title="Effectuer un retrait">⮓</a>
+                                <a href="#"
+                                   class="btn btn-success"
+                                   title="Effectuer un dépot">⭳</a>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+                </ul>
             </div>
-            <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div id="companyBuildings"
+                 class="tab-pane">
+                {% for buildings in company.buildings %}
+                <div class="card text-white {% include 'components/building-colors.html.twig' %}">
+                    <div class="card-header">
+                        {% include 'components/building-names.html.twig' %}
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>{% else %}
+                <p>Aucun batiment</p>{% endfor %}
             </div>
-        </div>{% endfor %}
-        
+        </div>
     </div>
 {% endblock %}

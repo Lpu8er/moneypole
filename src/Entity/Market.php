@@ -38,11 +38,11 @@ class Market extends AbstractEntity
      */
     protected $unitPrice = 0.;
     
-    public function getShop(): type {
+    public function getShop(): Shop {
         return $this->shop;
     }
 
-    public function getItem(): type {
+    public function getItem(): Item {
         return $this->item;
     }
 
@@ -54,12 +54,12 @@ class Market extends AbstractEntity
         return $this->unitPrice;
     }
 
-    public function setShop(type $shop) {
+    public function setShop(Shop $shop) {
         $this->shop = $shop;
         return $this;
     }
 
-    public function setItem(type $item) {
+    public function setItem(Item $item) {
         $this->item = $item;
         return $this;
     }

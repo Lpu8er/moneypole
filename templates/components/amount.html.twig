@@ -1,5 +1,5 @@
-<span class="money-amount"
-      title="{{ title }}">
+<span class="money-amount"{% if title is defined and title is not empty %}
+      title="{{ title }}"{% endif %}>
     {{ currency.getSymbol }}
     {{ amount|number_format(2) }}
 </span>
