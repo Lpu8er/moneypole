@@ -1,6 +1,9 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
+    cost.travel: 0.5
+    cost.crossborder: 100
+    cost.givemoney: 0.01
 
 services:
     # default configuration for services in *this* file

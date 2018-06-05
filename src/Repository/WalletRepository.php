@@ -6,6 +6,9 @@ use App\Entity\Wallet;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
+use App\Entity\NamedEntity;
+use App\Entity\Currency;
+
 /**
  * @method Wallet|null find($id, $lockMode = null, $lockVersion = null)
  * @method Wallet|null findOneBy(array $criteria, array $orderBy = null)
@@ -18,17 +21,37 @@ class WalletRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Wallet::class);
     }
-
-    /*
-    public function findBySomething($value)
-    {
-        return $this->createQueryBuilder('w')
-            ->where('w.something = :value')->setParameter('value', $value)
-            ->orderBy('w.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+    
+    /**
+     * 
+     * @param NamedEntity $entity
+     * @param Currency $currency
+     * @return Wallet
+     */
+    public function retrieveOrCreate(NamedEntity $entity, Currency $currency) {
+        $returns = $this->retrieve($entity, $currency);
+        if(empty($returns)) {
+            $returns = new Wallet;
+            $returns->setAmount(0.);
+            $returns->setCurrency($currency);
+            $returns->setNamedEntity($entity);
+            $this->getEntityManager()->persist($returns);
+            $this->getEntityManager()->flush();
+        }
+        return $returns;
     }
-    */
+    
+    /**
+     * 
+     * @param NamedEntity $entity
+     * @param Currency $currency
+     * @return Wallet
+     */
+    public function retrieve(NamedEntity $entity, Currency $currency) {
+        $returns = null;
+        try {
+            $returns = $this->getEntityManager()->getRepository(\App\Entity\Wallet::class)->findOneBy(['namedEntity' => $source->getId(), 'currency' => $currency->getId(),]);
+        } catch (\Exception $e){}
+        return $returns;
+    }
 }

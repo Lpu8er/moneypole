@@ -52,6 +52,8 @@ class CityFixtures extends Fixture implements ContainerAwareInterface, Dependent
                 'ltax' => 0.,
                 'energy' => 0.,
                 'available' => true,
+                'lat' => 47.751076,
+                'lng' => -120.740135,
             ],
             'paris' => [
                 'name' => 'Paris',
@@ -61,6 +63,8 @@ class CityFixtures extends Fixture implements ContainerAwareInterface, Dependent
                 'btax' => 0.,
                 'ltax' => 0.,
                 'energy' => 0.,
+                'lat' => 48.864716,
+                'lng' => 2.294694,
             ],
             'tokyo' => [
                 'name' => 'Tokyo',
@@ -71,6 +75,8 @@ class CityFixtures extends Fixture implements ContainerAwareInterface, Dependent
                 'ltax' => 0.,
                 'energy' => 0.,
                 'available' => true,
+                'lat' => 35.652832,
+                'lng' => 139.753372,
             ],
             'grenoble' => [
                 'name' => 'Grenoble',
@@ -81,6 +87,8 @@ class CityFixtures extends Fixture implements ContainerAwareInterface, Dependent
                 'ltax' => 0.,
                 'energy' => 0.,
                 'available' => true,
+                'lat' => 45.16667,
+                'lng' => 5.71667,
             ],
         ];
         foreach($toInsert as $ik => $ti) {

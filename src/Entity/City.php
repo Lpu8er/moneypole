@@ -128,6 +128,20 @@ class City extends NamedEntity
      */
     protected $availableFound = false;
     
+    /**
+     * 
+     * @ORM\Column(name="lng", type="decimal", precision=10, scale=6)
+     * @var float
+     */
+    protected $lng;
+    
+    /**
+     * 
+     * @ORM\Column(name="lat", type="decimal", precision=10, scale=6)
+     * @var float
+     */
+    protected $lat;
+    
     public function getCountry(): Country {
         return $this->country;
     }
@@ -280,6 +294,22 @@ class City extends NamedEntity
         $this->availableFound = $availableFound;
         return $this;
     }
+    public function getLng() {
+        return $this->lng;
+    }
 
+    public function getLat() {
+        return $this->lat;
+    }
 
+    public function setLng($lng) {
+        $this->lng = $lng;
+        return $this;
+    }
+
+    public function setLat($lat) {
+        $this->lat = $lat;
+        return $this;
+    }
+    
 }
