@@ -77,4 +77,5 @@ class CompanyController extends InternalController {
         }
         return $returns;
     }
+    
 }
