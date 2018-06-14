@@ -36,7 +36,7 @@ class History {
      */
     protected $val;
     
-    public function getDateHistory(): date {
+    public function getDateHistory(): \DateTime {
         return $this->dateHistory;
     }
 
@@ -48,7 +48,7 @@ class History {
         return $this->val;
     }
 
-    public function setDateHistory(date $dateHistory) {
+    public function setDateHistory(\DateTime $dateHistory) {
         $this->dateHistory = $dateHistory;
         return $this;
     }

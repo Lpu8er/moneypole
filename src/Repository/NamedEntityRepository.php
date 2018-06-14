@@ -6,7 +6,6 @@ use App\Entity\NamedEntity;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
-use App\Entity\NamedEntity;
 use App\Entity\Currency;
 use App\Entity\Wallet;
 
