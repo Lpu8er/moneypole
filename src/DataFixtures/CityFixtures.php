@@ -103,6 +103,8 @@ class CityFixtures extends Fixture implements ContainerAwareInterface, Dependent
             $c->setLivingTax($ti['ltax']);
             $c->setEnergyCost($ti['energy']);
             $c->setAvailableFound(!empty($ti['available']));
+            $c->setLat($ti['lat']);
+            $c->setLng($ti['lng']);
             $manager->persist($c);
             $manager->flush();
             $this->setReference('city-'.$ik, $c);
