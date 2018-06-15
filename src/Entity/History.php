@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @author lpu8er
  * @ORM\Entity(repositoryClass="App\Repository\HistoryRepository")
+ * @ORM\Table(name="histories")
  */
 class History {
     const GROUP_MARKET = 'market';

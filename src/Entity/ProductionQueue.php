@@ -7,6 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
  * Description of ProductionQueue
  *
  * @author lpu8er
+ * @ORM\Entity
+ * @ORM\Table(name="production_queues")
  */
 class ProductionQueue {
     /**

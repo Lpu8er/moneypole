@@ -7,16 +7,31 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\BuildingRepository")
  * @ORM\InheritanceType("JOINED")
- * @ORM\DiscriminatorColumn(name="btype", type="string")
- * @ORM\DiscriminatorMap({"basic" = "Building", "factory" = "Factory", "office" = "Office", "shop" = "Shop", "warehouse" = "Warehouse"})
+ * @ORM\Table(name="buildings")
+ * @ORM\DiscriminatorColumn(name="etype", type="string")
+ * @ORM\DiscriminatorMap({"building" = "Building", "factory" = "Factory", "office" = "Office", "shop" = "Shop", "warehouse" = "Warehouse"})
  */
 class Building extends IdEntity {
+    public function getEType(): string {
+        return static::ETYPE_BUILDING;
+    }
+    
     /**
      *
-     * @ORM\Column(name="name", type="string")
-     * @var string
+     * @var string 
+     * @ORM\Column(type="string")
      */
     protected $name;
+    
+    public function getName(): string {
+        return $this->name;
+    }
+
+    public function setName(string $name) {
+        $this->name = $name;
+        return $this;
+    }
+    
     /**
      * @ORM\ManyToOne(targetEntity="City")
      * @ORM\JoinColumn(name="city_id", referencedColumnName="id")
@@ -125,10 +140,6 @@ class Building extends IdEntity {
      * @var int
      */
     protected $energy = 0;
-    
-    public function getName() {
-        return $this->name;
-    }
 
     public function getCity(): City {
         return $this->city;
@@ -200,11 +211,6 @@ class Building extends IdEntity {
 
     public function getEnergy() {
         return $this->energy;
-    }
-
-    public function setName($name) {
-        $this->name = $name;
-        return $this;
     }
 
     public function setCity(City $city) {

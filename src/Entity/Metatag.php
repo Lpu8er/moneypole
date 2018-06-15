@@ -7,6 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
  * Description of Metatag
  *
  * @author lpu8er
+ * @ORM\Entity
+ * @ORM\Table(name="metatags")
  */
 class Metatag {
     /**

@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MarketRepository")
+ * @ORM\Table(name="markets")
  */
 class Market extends AbstractEntity
 {

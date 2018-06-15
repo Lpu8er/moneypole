@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Description of Travel
  *
  * @ORM\Entity
- * @ORM\Table
+ * @ORM\Table(name="travels")
  * @author lpu8er
  */
 class Travel extends IdEntity {

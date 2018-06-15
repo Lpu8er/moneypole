@@ -63,4 +63,12 @@ class NamedEntityRepository extends ServiceEntityRepository
         }
         return $returns;
     }
+    
+    /**
+     * Retrieve the final owner for a NamedEntity
+     * @param NamedEntity $ne
+     */
+    public function ensureOwner(NamedEntity $ne) {
+        
+    }
 }

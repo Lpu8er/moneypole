@@ -6,9 +6,14 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PersonRepository")
+ * @ORM\Table(name="persons")
  */
 class Person extends NamedEntity
 {
+    public function getEType(): string {
+        return static::ETYPE_PERSON;
+    }
+    
     /**
      * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=true)

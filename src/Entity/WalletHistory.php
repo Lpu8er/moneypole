@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @author lpu8er
  * @ORM\Entity(repositoryClass="App\Repository\WalletHistoryRepository")
+ * @ORM\Table(name="wallet_histories")
  */
 class WalletHistory extends IdEntity {
     

@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\BuildingWalletRepository")
+ * @ORM\Table(name="building_wallets")
  */
 class BuildingWallet extends AbstractEntity
 {

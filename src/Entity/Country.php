@@ -6,9 +6,14 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CountryRepository")
+ * @ORM\Table(name="countries")
  */
 class Country extends NamedEntity
 {
+    public function getEType(): string {
+        return static::ETYPE_COUNTRY;
+    }
+    
     /**
      * Taxe de sol par m2 par ville
      * @ORM\Column(name="ground_tax", type="decimal", precision=12, scale=5)

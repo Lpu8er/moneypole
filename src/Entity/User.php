@@ -7,6 +7,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @ORM\Table(name="users")
  */
 class User extends IdEntity implements UserInterface, \Serializable {
     const ROLE_USER = 'ROLE_USER';
